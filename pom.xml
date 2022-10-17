@@ -12,5 +12,23 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    
+    <!-- https://mvnrepository.com/artifact/org.functionaljava/functionaljava -->
+    <dependencies>
+    <dependency>
+        <groupId>org.functionaljava</groupId>
+        <artifactId>functionaljava</artifactId>
+        <version>4.7</version>
+    </dependency>
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.7</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+
 </project>
