@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e033e0b-5cd0-4c79-93d5-ba676844539b" name="Changes" comment="">
+    <list default="true" id="8e033e0b-5cd0-4c79-93d5-ba676844539b" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -52,11 +55,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testCreateArrayWithEvenNumbers" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.countNamesStartingWithA" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="StreamHomework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testCreateArrayWithEvenNumbers" />
+      <option name="METHOD_NAME" value="countNamesStartingWithA" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -64,11 +67,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testCreateListOfLetters" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.testCombineThreeListsIntoOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="StreamHomework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testCreateListOfLetters" />
+      <option name="METHOD_NAME" value="testCombineThreeListsIntoOne" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -76,11 +79,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testCreateListWithEvenNumbers" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.testFindFirstNameStartingWithF" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="StreamHomework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testCreateListWithEvenNumbers" />
+      <option name="METHOD_NAME" value="testFindFirstNameStartingWithF" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -88,11 +91,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testMoveListToMap" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.testRemoveDuplicates" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="StreamHomework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testMoveListToMap" />
+      <option name="METHOD_NAME" value="testRemoveDuplicates" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -103,10 +106,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.Tests" />
-        <item itemvalue="TestNG.Tests.testCreateArrayWithEvenNumbers" />
-        <item itemvalue="TestNG.Tests.testCreateListWithEvenNumbers" />
-        <item itemvalue="TestNG.Tests.testCreateListOfLetters" />
-        <item itemvalue="TestNG.Tests.testMoveListToMap" />
+        <item itemvalue="TestNG.Tests.testRemoveDuplicates" />
+        <item itemvalue="TestNG.Tests.testCombineThreeListsIntoOne" />
+        <item itemvalue="TestNG.Tests.testFindFirstNameStartingWithF" />
+        <item itemvalue="TestNG.Tests.countNamesStartingWithA" />
       </list>
     </recent_temporary>
   </component>
@@ -119,6 +122,14 @@
       <option name="presentableId" value="Default" />
       <updated>1665667594655</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1666005982290</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666005982291</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,5 +142,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

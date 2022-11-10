@@ -1,3 +1,4 @@
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.*;
@@ -5,17 +6,21 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.*;
 
 public class Tests {
-    List<String> memberNames = new ArrayList<>();
+    List<String> memberNames;
+
+    @BeforeMethod
+    public void setup() {
+    memberNames = new ArrayList<>();
+    }
 
 
     // 1. Show in console
     @Test
     public void testPrintToConsole() {
-        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        stream.collect(Collectors.toList())
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).collect(Collectors.toList())
                 .forEach(System.out::println);
     }
 
@@ -32,10 +37,9 @@ public class Tests {
 
     @Test
     public void testCreateListWithEvenNumbers() {
-        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        List<Integer> listOfEvenNumbers = stream.collect(Collectors.toList())
+        List<Integer> listOfEvenNumbers = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).collect(Collectors.toList())
                 .stream()
-                .filter((e) -> e % 2 == 0)
+                .filter(e -> e % 2 == 0)
                 .collect(Collectors.toList());
         System.out.println(listOfEvenNumbers);
         assertEquals(listOfEvenNumbers, Arrays.asList(2, 4, 6, 8));
@@ -45,8 +49,7 @@ public class Tests {
 
     @Test
     public void testCreateArrayWithEvenNumbers() {
-        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        int[] arrayOfEvenNumbers = stream.filter((e) -> e % 2 == 0)
+        int[] arrayOfEvenNumbers = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).filter((e) -> e % 2 == 0)
                 .mapToInt(x -> x)
                 .toArray();
         System.out.println(Arrays.toString(arrayOfEvenNumbers));
@@ -56,10 +59,9 @@ public class Tests {
     // 5. filter values, keep those that start with "c", convert all values, convert to uppercase, sort in Descending order
     @Test
     public void testFilterConvertAndSortValues() {
-        List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
-        myList.stream()
-                .filter((c) -> c.startsWith("c"))
-                .map((e) -> e.toUpperCase())
+        Arrays.asList("a1", "a2", "b1", "c2", "c1").stream()
+                .filter(c -> c.startsWith("c"))
+                .map(e -> e.toUpperCase())
                 .sorted(Comparator.reverseOrder())
                 .forEach(System.out::println);
     }
@@ -77,8 +79,8 @@ public class Tests {
         memberNames.add("Yana");
         memberNames.add("Lokesh");
         memberNames.stream()
-                .filter((e) -> e.startsWith("A"))
-                .filter((e) -> e.length() > 5)
+                .filter(e -> e.startsWith("A"))
+                .filter(e -> e.length() > 5)
                 .forEach(System.out::println);
     }
 
@@ -94,9 +96,9 @@ public class Tests {
         memberNames.add("Salman");
         memberNames.add("Yana");
         memberNames.add("Lokesh");
-        memberNames.stream().
-                sorted()
-                .map((name) -> name.toLowerCase())
+        memberNames.stream()
+                .sorted()
+                .map(name -> name.toLowerCase())
                 .forEach(System.out::println);
     }
 
@@ -115,13 +117,13 @@ public class Tests {
         memberNames.add("Yana");
         memberNames.add("Lokesh");
 
-        boolean allContainsS = memberNames.stream().allMatch((name) -> name.contains("S"));
-        boolean anyContainsS = memberNames.stream().anyMatch((name) -> name.contains("S"));
-        boolean noneContainsH = memberNames.stream().noneMatch((name) -> name.contains("H"));
+        boolean allContainsS = memberNames.stream().allMatch(name -> name.contains("S"));
+        boolean anyContainsS = memberNames.stream().anyMatch(name -> name.contains("S"));
+        boolean noneContainsH = memberNames.stream().noneMatch(name -> name.contains("H"));
 
-        assertEquals(allContainsS, false);
-        assertEquals(anyContainsS, true);
-        assertEquals(noneContainsH, true);
+        assertFalse(allContainsS);
+        assertTrue(anyContainsS);
+        assertTrue(noneContainsH);
     }
 
     // 9. From task 6 count the number of names starting with “A” - display their number.
@@ -138,9 +140,10 @@ public class Tests {
         memberNames.add("Yana");
         memberNames.add("Lokesh");
         long numberOfNames = memberNames.stream()
-                .filter((name) -> name.startsWith("A"))
+                .filter(name -> name.startsWith("A"))
                 .count();
         System.out.println(numberOfNames);
+        assertEquals(numberOfNames, 3);
     }
 
 
@@ -158,19 +161,20 @@ public class Tests {
         memberNames.add("Yana");
         memberNames.add("Lokesh");
         String firstElement = memberNames.stream()
-                .filter((name) -> name.startsWith("L"))
+                .filter(name -> name.startsWith("L"))
                 .findFirst()
                 .orElse(null);
         System.out.println(firstElement);
+        assertEquals(firstElement, "Lokesh");
     }
 
     // 11a. Java Stream flatMap() - concatenate 3 arrays into one using flatMap ()
 
     @Test
     public void testCombineThreeListsIntoOne() {
-    List<Integer> list1 = Arrays.asList(1, 2, 3);
-    List<Integer> list2 = Arrays.asList(4, 5, 6);
-    List<Integer> list3 = Arrays.asList(7, 8, 9);
+        List<Integer> list1 = Arrays.asList(1, 2, 3);
+        List<Integer> list2 = Arrays.asList(4, 5, 6);
+        List<Integer> list3 = Arrays.asList(7, 8, 9);
     List<Integer> totalList = Stream.of(list1, list2, list3)
             .flatMap(Collection::stream)
             .collect(Collectors.toList());
@@ -204,9 +208,9 @@ public class Tests {
     @Test
     public void testMoveListToMap(){
         ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(1, 1, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7));
-        Function<Integer, Long> countElements = (element) -> numbersList.stream().filter((number) -> number==element).count();
+        Function<Integer, Long> countElements = element -> numbersList.stream().filter(number -> number==element).count();
         Map<Object, Object> mapFromList = numbersList.stream()
-                .collect(Collectors.toMap((element) -> element, (element) -> countElements.apply(element), (elementOne, elementTwo) -> elementOne));
+                .collect(Collectors.toMap(element -> element, element -> countElements.apply(element), (elementOne, elementTwo) -> elementOne));
         System.out.println(mapFromList);
         assertEquals(mapFromList.toString(), "{1=2, 2=1, 3=3, 4=1, 5=1, 6=3, 7=1}");
     }
@@ -221,7 +225,7 @@ public class Tests {
         people.put("Steve", Arrays.asList("555-6654", "555-3242", "d"));
         List<String> letters = people.values().stream()
                 .flatMap(Collection::stream)
-                .filter((a) -> a.matches("[a-zA-Z]"))
+                .filter(a -> a.matches("[a-zA-Z]"))
                 .collect(Collectors.toList());
         System.out.println(letters);
         assertEquals(letters.toString(), "[d, s, a, z]");
