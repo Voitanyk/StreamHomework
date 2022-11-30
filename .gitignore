@@ -63,7 +63,7 @@ suites/overridden.suite.file.xml
 browserstack.err
 cookies.json
 urlParameter.json
-allure-results/
+target/allure-results/
 classes/
 nmo-tests-journey.ipr
 logs
