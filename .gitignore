@@ -156,5 +156,5 @@ Desktop.ini
 #retrieved from DB data
 src/main/resources/[0-9]*
 
-allure-results/
+target/allure-results/
 
